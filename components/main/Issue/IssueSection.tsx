@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useRouter } from 'expo-router';
 import { VStack } from '../../../components/general/VStack';
 import Typo from '../../../components/general/Typo';
 import Button from '../../../components/general/Button';
@@ -11,6 +12,8 @@ interface Props {
 }
 
 export default function IssueSection({editor, title}: Props) {
+    const router = useRouter();
+
     return (
         <VStack fullWidth align="start" justify="center" gap={8} style={styles.container}>
             <Typo.MD
@@ -31,7 +34,7 @@ export default function IssueSection({editor, title}: Props) {
                     {editor} - 예상시간 7분
                 </Typo.XS>
             </VStack>
-            <Button style={styles.button}>
+            <Button style={styles.button} onPress={() => router.push('/article')}>
                 <Typo.MD
                     color="inverted"
                     fontWeight="medium"
