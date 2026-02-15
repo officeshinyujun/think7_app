@@ -1,0 +1,12 @@
+import React, { useState } from 'react';
+import { StyleSheet, View, TouchableOpacity, TextInput, Switch, ScrollView } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
+import { useRouter } from 'expo-router';
+import { COLORS } from '../../constants/COLORS';
+import { VStack } from '../../components/general/VStack';
+import { HStack } from '../../components/general/HStack';
+import Typo from '../../components/general/Typo';
+import { ChevronLeft, User, Camera, MessageCircleQuestion, Mail, Ticket } from 'lucide-react-native';
+
+// ... (Page implementations will follow in sequential tool calls)

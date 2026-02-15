@@ -6,8 +6,9 @@ import { VStack } from '../components/general/VStack';
 import Header from '../components/main/Header';
 import StricSection from '../components/main/Stric/StricSection';
 import IssueSection from '../components/main/Issue/IssueSection';
-import ThinkSection from '../components/main/Think/ThinkSection';
 import BottomBar from '../components/general/BottomBar';
+import ReportPreview from '../components/main/ReportPreview';
+import GrowthChart from '../components/main/GrowthChart';
 
 const dummyData = {
   strict: {
@@ -44,7 +45,8 @@ export default function Home() {
               editor={dummyData.issue.editor}
               title={dummyData.issue.title}
             />
-            <ThinkSection />
+            <ReportPreview />
+            <GrowthChart />
           </VStack>
         </ScrollView>
         <BottomBar />
@@ -61,6 +63,6 @@ const styles = StyleSheet.create({
   scrollContent: {
     padding: 16,
     paddingTop: 0,
-    paddingBottom: 100, // Add padding for bottom bar
+    paddingBottom: 120, // Add padding for bottom bar
   }
 });

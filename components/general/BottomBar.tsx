@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { House, Pencil, ClipboardCheck, User, LucideProps } from 'lucide-react-native';
+import { House, ClipboardCheck, User, LucideProps } from 'lucide-react-native';
 import { usePathname, useRouter } from 'expo-router';
 import { COLORS } from '../../constants/COLORS';
 import { HStack } from './HStack';
@@ -44,11 +44,6 @@ export default function BottomBar() {
       icon: <House size={20} color="#8B847F" />,
       text: "홈",
       link: "/"
-    },
-    {
-      icon: <Pencil size={20} color="#8B847F" />,
-      text: "기록",
-      link: "/record"
     },
     {
       icon: <ClipboardCheck size={20} color="#8B847F" />,
