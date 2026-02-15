@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS } from '../../constants/COLORS';
@@ -49,9 +49,16 @@ export default function Article() {
           style={styles.gradient}
         />
         <VStack fullWidth align="center" justify="center" style={styles.buttonContainerTwo}>
-          <Button style={styles.button}>
-            <Typo.MD color="inverted" fontWeight="semi-bold">문제 풀기</Typo.MD>
-          </Button>
+          <TouchableOpacity
+            style={styles.button}
+            activeOpacity={0.8}
+            onPress={() => router.push('/article/question')}
+          >
+            <Typo.MD
+              color="inverted"
+              fontWeight="semi-bold"
+            >문제 풀기</Typo.MD>
+          </TouchableOpacity>
         </VStack>
       </View>
     </SafeAreaView>
