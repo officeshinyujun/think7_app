@@ -5,11 +5,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS } from '../../constants/COLORS';
 import { VStack } from '../../components/general/VStack';
 import Typo from '../../components/general/Typo';
-import Button from '../../components/general/Button';
-
 import { useRouter } from 'expo-router';
 import { HStack } from '../../components/general/HStack';
-// ... other imports
 
 export default function Article() {
   const router = useRouter();
@@ -26,19 +23,20 @@ export default function Article() {
           <VStack fullWidth align="start" justify="start" gap={8}>
             <HStack align="center" justify="between" fullWidth gap={6}>
               <Typo.XL color="primary" fontWeight="bold">{dummyData.title}</Typo.XL>
-              <Typo.SM
-                color="secondary"
-                fontWeight="medium"
-                onPress={() => router.back()}
-              >
-                이전으로
-              </Typo.SM>
+              <TouchableOpacity onPress={() => router.back()}>
+                 <HStack align="center" gap={4}>
+                    <Typo.SM color="secondary" fontWeight="medium">이전으로</Typo.SM>
+                 </HStack>
+              </TouchableOpacity>
             </HStack>
             <Typo.SM color="secondary" fontWeight="medium">{dummyData.editor}</Typo.SM>
           </VStack>
-          <Typo.MD color="primary" fontWeight="regular" style={{ lineHeight: 24 }}>
-            {dummyData.content}
-          </Typo.MD>
+
+          <View style={styles.articleCard}>
+             <Typo.MD color="primary" fontWeight="regular" style={{ lineHeight: 28 }}>
+                {dummyData.content}
+             </Typo.MD>
+          </View>
           <View style={{ width: "100%", minHeight: 100 }} />
         </VStack>
       </ScrollView>
@@ -95,5 +93,12 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  articleCard: {
+     backgroundColor: 'white',
+     borderRadius: 16,
+     // padding: 16, // Optional: if we want card look on mobile too.
+     // To match the "Article Styling" request which might imply the clean/white/padded look:
+     padding: 20
   }
 });
