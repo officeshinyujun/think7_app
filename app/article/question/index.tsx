@@ -92,8 +92,7 @@ export default function QuestionPage() {
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
-                  // Handle submit or just back? Frontend had empty onClick.
-                  router.back(); 
+                  router.push('/record');
               }}
               activeOpacity={0.8}
             >
