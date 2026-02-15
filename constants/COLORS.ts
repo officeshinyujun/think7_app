@@ -14,6 +14,6 @@ export const COLORS = {
     wrong: '#DA7F7F',
   },
   border: {
-    primary: '#474747',
+    primary: '#E6E6E6',
   },
 };

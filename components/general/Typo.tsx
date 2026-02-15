@@ -10,6 +10,7 @@ interface TypoProps {
   style?: TextStyle;
   color?: ColorType;
   fontWeight?: FontWeightType;
+  onPress?: () => void;
 }
 
 const getFontWeight = (weight?: FontWeightType) => {
@@ -38,9 +39,11 @@ const getColor = (color?: ColorType) => {
   }
 };
 
-const TypoBase = ({ children, style, color, fontWeight, fontSize }: TypoProps & { fontSize: number }) => {
+const TypoBase = ({ children, style, color, fontWeight, fontSize, onPress }: TypoProps & { fontSize: number }) => {
   return (
-    <Text style={[
+    <Text 
+      onPress={onPress}
+      style={[
       {
         fontSize,
         color: getColor(color),

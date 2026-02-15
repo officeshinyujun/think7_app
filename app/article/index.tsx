@@ -7,7 +7,12 @@ import { VStack } from '../../components/general/VStack';
 import Typo from '../../components/general/Typo';
 import Button from '../../components/general/Button';
 
+import { useRouter } from 'expo-router';
+import { HStack } from '../../components/general/HStack';
+// ... other imports
+
 export default function Article() {
+  const router = useRouter();
   const dummyData = {
     title: "“석주는 관하여”",
     editor: "NBM 정여진 기자",
@@ -19,7 +24,16 @@ export default function Article() {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <VStack fullWidth align="start" justify="start" gap={16}>
           <VStack fullWidth align="start" justify="start" gap={8}>
-            <Typo.XL color="primary" fontWeight="bold">{dummyData.title}</Typo.XL>
+            <HStack align="center" justify="between" fullWidth gap={6}>
+              <Typo.XL color="primary" fontWeight="bold">{dummyData.title}</Typo.XL>
+              <Typo.SM
+                color="secondary"
+                fontWeight="medium"
+                onPress={() => router.back()}
+              >
+                이전으로
+              </Typo.SM>
+            </HStack>
             <Typo.SM color="secondary" fontWeight="medium">{dummyData.editor}</Typo.SM>
           </VStack>
           <Typo.MD color="primary" fontWeight="regular" style={{ lineHeight: 24 }}>

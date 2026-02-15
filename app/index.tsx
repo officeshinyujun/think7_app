@@ -7,6 +7,7 @@ import Header from '../components/main/Header';
 import StricSection from '../components/main/Stric/StricSection';
 import IssueSection from '../components/main/Issue/IssueSection';
 import ThinkSection from '../components/main/Think/ThinkSection';
+import BottomBar from '../components/general/BottomBar';
 
 const dummyData = {
   strict: {
@@ -46,6 +47,7 @@ export default function Home() {
             <ThinkSection />
           </VStack>
         </ScrollView>
+        <BottomBar />
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -59,5 +61,6 @@ const styles = StyleSheet.create({
   scrollContent: {
     padding: 16,
     paddingTop: 0,
+    paddingBottom: 100, // Add padding for bottom bar
   }
 });
